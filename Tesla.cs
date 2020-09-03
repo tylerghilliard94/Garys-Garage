@@ -1,15 +1,19 @@
 using System;
-public class Tesla : Vehicle  // Electric car
+namespace GaryGarage
 {
-    public double BatteryKWh { get; set; }
-
-
-    public void ChargeBattery()
+    public class Tesla : Vehicle, IElectric  // Electric car
     {
-        // method definition omitted
-    }
-    public override void Drive()
-    {
-        Console.WriteLine($"The {MainColor} Tesla blazes by you. MMmmmmmmmmmmmm!");
+        public double BatteryKWh { get; set; }
+
+        public int CurrentChargePercentage { get; set; }
+
+        public void ChargeBattery()
+        {
+            CurrentChargePercentage = 100;
+        }
+        public override void Drive()
+        {
+            Console.WriteLine($"The {MainColor} Tesla blazes by you. MMmmmmmmmmmmmm!");
+        }
     }
 }
